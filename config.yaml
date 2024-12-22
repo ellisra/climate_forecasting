@@ -1,0 +1,21 @@
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .
+
+paths:
+  data: ${oc.env:PWD}/data/
+  output: model_outputs
+  probabilities: probabilities
+  forecasts: forecasts
+  models: models
+
+params:
+  clear: true
+  n_steps: 24
+  feature: meantemp
+  p: 5
+  d: 1
+  q: 0
+  seasonality: 90
