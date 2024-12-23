@@ -25,7 +25,7 @@ dev = [
 ]
 
 [tool.hatch.build]
-packages = [{ include = "climate_forecasting", from = "src" }]
+packages = ["src/climate_forecasting"]
 
 [tool.ruff]
 line-length = 79
