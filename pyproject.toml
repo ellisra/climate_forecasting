@@ -7,14 +7,14 @@ authors = [
     {name = "Rob Ellis", email = "robandrewells@gmail.com"},
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandas>=2.2.3",
+    "plotly>=5.24.1",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-[tool.hatch.build]
-packages = ["src/climate-forecasting"]
 
 [dependency-groups]
 dev = [
@@ -23,6 +23,9 @@ dev = [
     "pydantic>=2.10.4",
     "ruff>=0.8.4",
 ]
+
+[tool.hatch.build]
+packages = [{ include = "climate_forecasting", from = "src" }]
 
 [tool.ruff]
 line-length = 79

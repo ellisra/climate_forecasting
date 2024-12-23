@@ -5,8 +5,9 @@ hydra:
     dir: .
 
 paths:
-  data: ${oc.env:PWD}/data/
-  output: model_outputs
+  train_data: ${oc.env:PWD}/data/train.csv
+  test_data: ${oc.env:PWD}/data/test.csv
+  outputs: model_outputs
   probabilities: probabilities
   forecasts: forecasts
   models: models
@@ -15,7 +16,5 @@ params:
   clear: true
   n_steps: 24
   feature: meantemp
-  p: 5
-  d: 1
-  q: 0
-  seasonality: 90
+  pdq: (5, 1, 0)
+  seasonality: 365
