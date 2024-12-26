@@ -14,8 +14,13 @@ def main(cfg: Config):
         cfg: Application configuration
     """
     df = pd.read_csv(cfg.paths.train_data).set_index("date")
+    test = pd.read_csv("data/test.csv").set_index("date")
 
-    fig = go.Figure(data=go.Scatter(x=df.index, y=df["meantemp"]))
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(x=df.index, y=df["meantemp"]))
+    fig.add_trace(go.Scatter(x=test.index, y=test["meantemp"]))
+
     fig.show()
 
 
